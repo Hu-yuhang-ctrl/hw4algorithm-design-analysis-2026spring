@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net">
   <diagram name="第 1 页" id="yhq_8Vc7rq6IEwz_Q3Bu">
-    <mxGraphModel dx="2892" dy="1164" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2950" dy="1230" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -1991,6 +1991,480 @@
         <mxCell id="gwNKOXZ6YcYwssgr9vOA-80" parent="gwNKOXZ6YcYwssgr9vOA-59" style="shape=line;dashed=1;fixDash=1;dashPattern=2 2;strokeColor=light-dark(#9370DB,#cccccc);" vertex="1">
           <mxGeometry height="0.9703207276208712" width="1026" x="42" y="8185.9956869315465" as="geometry" />
         </mxCell>
+        <UserObject label="" mermaidData="{&#xa;  &quot;data&quot;: &quot;stateDiagram-v2\n    [*] --&gt; 待选择\n\n    state \&quot;待选择\&quot; as 待选择\n    state \&quot;已选择待核查资料\&quot; as 已选择待核查资料\n    state \&quot;字段已读取\&quot; as 字段已读取\n    state \&quot;字段完整性检查中\&quot; as 字段完整性检查中\n    state \&quot;字段完整性异常\&quot; as 字段完整性异常\n    state \&quot;字段格式检查中\&quot; as 字段格式检查中\n    state \&quot;字段格式异常\&quot; as 字段格式异常\n    state \&quot;数值合理性检查中\&quot; as 数值合理性检查中\n    state \&quot;数值异常\&quot; as 数值异常\n    state \&quot;重复性检查中\&quot; as 重复性检查中\n    state \&quot;重复资料\&quot; as 重复资料\n    state \&quot;核查通过\&quot; as 核查通过\n    state \&quot;核查结果已输出\&quot; as 核查结果已输出\n\n    待选择 --&gt; 已选择待核查资料: 选择需要核查的房源数据\n    已选择待核查资料 --&gt; 字段已读取: 读取房源基础字段\n\n    字段已读取: do / 读取价格、面积、户型、楼层、朝向、装修等信息\n    字段已读取 --&gt; 字段完整性检查中: 开始完整性检查\n\n    字段完整性检查中: do / 检查必填字段是否缺失\n    字段完整性检查中 --&gt; 字段完整性异常: 存在字段缺失\n    字段完整性检查中 --&gt; 字段格式检查中: 字段无缺失\n\n    字段完整性异常: do / 标记为资料缺失\n    字段完整性异常 --&gt; 核查结果已输出: 生成缺失字段提示\n\n    字段格式检查中: do / 检查字段格式是否规范\n    字段格式检查中 --&gt; 字段格式异常: 字段格式不规范\n    字段格式检查中 --&gt; 数值合理性检查中: 字段格式规范\n\n    字段格式异常: do / 标记为资料不规范\n    字段格式异常 --&gt; 核查结果已输出: 生成格式问题提示\n\n    数值合理性检查中: do / 检查价格、面积、楼层等数值是否异常\n    数值合理性检查中 --&gt; 数值异常: 存在异常数值\n    数值合理性检查中 --&gt; 重复性检查中: 数值合理\n\n    数值异常: do / 标记为异常资料\n    数值异常 --&gt; 核查结果已输出: 生成异常原因提示\n\n    重复性检查中: do / 检查房源信息是否重复\n    重复性检查中 --&gt; 重复资料: 存在重复房源\n    重复性检查中 --&gt; 核查通过: 不存在重复房源\n\n    重复资料: do / 标记为重复资料\n    重复资料 --&gt; 核查结果已输出: 生成重复数据提示\n\n    核查通过: do / 标记为资料完整且规范\n    核查通过 --&gt; 核查结果已输出: 生成核查通过结果\n\n    核查结果已输出 --&gt; [*]&quot;,&#xa;  &quot;config&quot;: null&#xa;}" id="gwNKOXZ6YcYwssgr9vOA-121">
+          <mxCell connectable="0" parent="1" style="group;transparentBounds=1;editIcon=1;lockedGroup=1;groupPadding=20;" vertex="1">
+            <mxGeometry as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="n:root_start" mermaidBaseStyle="ellipse;html=1;fillColor=light-dark(#333333,#cccccc);strokeColor=light-dark(#333333,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="" id="gwNKOXZ6YcYwssgr9vOA-122">
+          <mxCell parent="gwNKOXZ6YcYwssgr9vOA-121" style="ellipse;html=1;fillColor=light-dark(#333333,#cccccc);strokeColor=light-dark(#333333,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="14" width="14" x="563" y="8834" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="待选择" mermaidId="n:待选择" mermaidBaseStyle="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="待选择" id="gwNKOXZ6YcYwssgr9vOA-123">
+          <mxCell parent="gwNKOXZ6YcYwssgr9vOA-121" style="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="40" width="64" x="538" y="8898" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="已选择待核查资料" mermaidId="n:已选择待核查资料" mermaidBaseStyle="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="已选择待核查资料" id="gwNKOXZ6YcYwssgr9vOA-124">
+          <mxCell parent="gwNKOXZ6YcYwssgr9vOA-121" style="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="40" width="144" x="498" y="9007" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="do / 读取价格、面积、户型、楼层、朝向、装修等信息" mermaidId="n:字段已读取" mermaidBaseStyle="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="do / 读取价格、面积、户型、楼层、朝向、装修等信息" id="gwNKOXZ6YcYwssgr9vOA-125">
+          <mxCell parent="gwNKOXZ6YcYwssgr9vOA-121" style="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="40" width="404" x="368" y="9116" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="do / 检查必填字段是否缺失" mermaidId="n:字段完整性检查中" mermaidBaseStyle="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="do / 检查必填字段是否缺失" id="gwNKOXZ6YcYwssgr9vOA-126">
+          <mxCell parent="gwNKOXZ6YcYwssgr9vOA-121" style="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="40" width="212" x="464" y="9225" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="do / 标记为资料缺失" mermaidId="n:字段完整性异常" mermaidBaseStyle="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="do / 标记为资料缺失" id="gwNKOXZ6YcYwssgr9vOA-127">
+          <mxCell parent="gwNKOXZ6YcYwssgr9vOA-121" style="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="40" width="164" x="40" y="9661" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="do / 检查字段格式是否规范" mermaidId="n:字段格式检查中" mermaidBaseStyle="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="do / 检查字段格式是否规范" id="gwNKOXZ6YcYwssgr9vOA-128">
+          <mxCell parent="gwNKOXZ6YcYwssgr9vOA-121" style="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="40" width="212" x="575" y="9334" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="do / 标记为资料不规范" mermaidId="n:字段格式异常" mermaidBaseStyle="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="do / 标记为资料不规范" id="gwNKOXZ6YcYwssgr9vOA-129">
+          <mxCell parent="gwNKOXZ6YcYwssgr9vOA-121" style="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="40" width="180" x="254" y="9661" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="do / 检查价格、面积、楼层等数值是否异常" mermaidId="n:数值合理性检查中" mermaidBaseStyle="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="do / 检查价格、面积、楼层等数值是否异常" id="gwNKOXZ6YcYwssgr9vOA-130">
+          <mxCell parent="gwNKOXZ6YcYwssgr9vOA-121" style="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="40" width="324" x="630" y="9443" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="do / 标记为异常资料" mermaidId="n:数值异常" mermaidBaseStyle="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="do / 标记为异常资料" id="gwNKOXZ6YcYwssgr9vOA-131">
+          <mxCell parent="gwNKOXZ6YcYwssgr9vOA-121" style="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="40" width="164" x="484" y="9661" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="do / 检查房源信息是否重复" mermaidId="n:重复性检查中" mermaidBaseStyle="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="do / 检查房源信息是否重复" id="gwNKOXZ6YcYwssgr9vOA-132">
+          <mxCell parent="gwNKOXZ6YcYwssgr9vOA-121" style="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="40" width="212" x="793" y="9552" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="do / 标记为重复资料" mermaidId="n:重复资料" mermaidBaseStyle="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="do / 标记为重复资料" id="gwNKOXZ6YcYwssgr9vOA-133">
+          <mxCell parent="gwNKOXZ6YcYwssgr9vOA-121" style="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="40" width="164" x="698" y="9661" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="do / 标记为资料完整且规范" mermaidId="n:核查通过" mermaidBaseStyle="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="do / 标记为资料完整且规范" id="gwNKOXZ6YcYwssgr9vOA-134">
+          <mxCell parent="gwNKOXZ6YcYwssgr9vOA-121" style="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="40" width="212" x="912" y="9661" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="核查结果已输出" mermaidId="n:核查结果已输出" mermaidBaseStyle="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="核查结果已输出" id="gwNKOXZ6YcYwssgr9vOA-135">
+          <mxCell parent="gwNKOXZ6YcYwssgr9vOA-121" style="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="40" width="128" x="502" y="9770" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="n:root_end" mermaidBaseStyle="ellipse;html=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#333333,#cccccc);strokeWidth=2;centerRadius=4;centerColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="" id="gwNKOXZ6YcYwssgr9vOA-136">
+          <mxCell parent="gwNKOXZ6YcYwssgr9vOA-121" style="ellipse;html=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#333333,#cccccc);strokeWidth=2;centerRadius=4;centerColor=default;fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="14" width="14" x="559" y="9860" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:root_start-&gt;待选择#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="gwNKOXZ6YcYwssgr9vOA-137">
+          <mxCell edge="1" parent="gwNKOXZ6YcYwssgr9vOA-121" source="gwNKOXZ6YcYwssgr9vOA-122" style="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="gwNKOXZ6YcYwssgr9vOA-123">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="选择需要核查的房源数据" mermaidId="e:待选择-&gt;已选择待核查资料#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="选择需要核查的房源数据" id="gwNKOXZ6YcYwssgr9vOA-138">
+          <mxCell edge="1" parent="gwNKOXZ6YcYwssgr9vOA-121" source="gwNKOXZ6YcYwssgr9vOA-123" style="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="gwNKOXZ6YcYwssgr9vOA-124">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="读取房源基础字段" mermaidId="e:已选择待核查资料-&gt;字段已读取#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="读取房源基础字段" id="gwNKOXZ6YcYwssgr9vOA-139">
+          <mxCell edge="1" parent="gwNKOXZ6YcYwssgr9vOA-121" source="gwNKOXZ6YcYwssgr9vOA-124" style="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="gwNKOXZ6YcYwssgr9vOA-125">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="开始完整性检查" mermaidId="e:字段已读取-&gt;字段完整性检查中#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="开始完整性检查" id="gwNKOXZ6YcYwssgr9vOA-140">
+          <mxCell edge="1" parent="gwNKOXZ6YcYwssgr9vOA-121" source="gwNKOXZ6YcYwssgr9vOA-125" style="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="gwNKOXZ6YcYwssgr9vOA-126">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="存在字段缺失" mermaidId="e:字段完整性检查中-&gt;字段完整性异常#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0;exitY=0.83;entryX=0.5;entryY=0;" mermaidBaseValue="存在字段缺失" id="gwNKOXZ6YcYwssgr9vOA-141">
+          <mxCell edge="1" parent="gwNKOXZ6YcYwssgr9vOA-121" source="gwNKOXZ6YcYwssgr9vOA-126" style="startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0;exitY=0.83;entryX=0.5;entryY=0;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="gwNKOXZ6YcYwssgr9vOA-127">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="字段无缺失" mermaidId="e:字段完整性检查中-&gt;字段格式检查中#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.69;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="字段无缺失" id="gwNKOXZ6YcYwssgr9vOA-142">
+          <mxCell edge="1" parent="gwNKOXZ6YcYwssgr9vOA-121" source="gwNKOXZ6YcYwssgr9vOA-126" style="startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.69;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="gwNKOXZ6YcYwssgr9vOA-128">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="生成缺失字段提示" mermaidId="e:字段完整性异常-&gt;核查结果已输出#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0;entryY=0.3;" mermaidBaseValue="生成缺失字段提示" id="gwNKOXZ6YcYwssgr9vOA-143">
+          <mxCell edge="1" parent="gwNKOXZ6YcYwssgr9vOA-121" source="gwNKOXZ6YcYwssgr9vOA-127" style="startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0;entryY=0.3;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="gwNKOXZ6YcYwssgr9vOA-135">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="字段格式不规范" mermaidId="e:字段格式检查中-&gt;字段格式异常#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0;exitY=0.93;entryX=0.5;entryY=0;" mermaidBaseValue="字段格式不规范" id="gwNKOXZ6YcYwssgr9vOA-144">
+          <mxCell edge="1" parent="gwNKOXZ6YcYwssgr9vOA-121" source="gwNKOXZ6YcYwssgr9vOA-128" style="startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0;exitY=0.93;entryX=0.5;entryY=0;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="gwNKOXZ6YcYwssgr9vOA-129">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="字段格式规范" mermaidId="e:字段格式检查中-&gt;数值合理性检查中#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.69;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="字段格式规范" id="gwNKOXZ6YcYwssgr9vOA-145">
+          <mxCell edge="1" parent="gwNKOXZ6YcYwssgr9vOA-121" source="gwNKOXZ6YcYwssgr9vOA-128" style="startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.69;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="gwNKOXZ6YcYwssgr9vOA-130">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="生成格式问题提示" mermaidId="e:字段格式异常-&gt;核查结果已输出#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0;entryY=0.1;" mermaidBaseValue="生成格式问题提示" id="gwNKOXZ6YcYwssgr9vOA-146">
+          <mxCell edge="1" parent="gwNKOXZ6YcYwssgr9vOA-121" source="gwNKOXZ6YcYwssgr9vOA-129" style="startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0;entryY=0.1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="gwNKOXZ6YcYwssgr9vOA-135">
+            <mxGeometry relative="1" x="-0.7056" y="31" as="geometry">
+              <mxPoint y="1" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="存在异常数值" mermaidId="e:数值合理性检查中-&gt;数值异常#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.24;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="存在异常数值" id="gwNKOXZ6YcYwssgr9vOA-147">
+          <mxCell edge="1" parent="gwNKOXZ6YcYwssgr9vOA-121" source="gwNKOXZ6YcYwssgr9vOA-130" style="startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.24;exitY=1;entryX=0.5;entryY=0;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="gwNKOXZ6YcYwssgr9vOA-131">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="数值合理" mermaidId="e:数值合理性检查中-&gt;重复性检查中#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.62;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="数值合理" id="gwNKOXZ6YcYwssgr9vOA-148">
+          <mxCell edge="1" parent="gwNKOXZ6YcYwssgr9vOA-121" source="gwNKOXZ6YcYwssgr9vOA-130" style="startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.62;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="gwNKOXZ6YcYwssgr9vOA-132">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="生成异常原因提示" mermaidId="e:数值异常-&gt;核查结果已输出#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="生成异常原因提示" id="gwNKOXZ6YcYwssgr9vOA-149">
+          <mxCell edge="1" parent="gwNKOXZ6YcYwssgr9vOA-121" source="gwNKOXZ6YcYwssgr9vOA-131" style="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="gwNKOXZ6YcYwssgr9vOA-135">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="存在重复房源" mermaidId="e:重复性检查中-&gt;重复资料#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.29;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="存在重复房源" id="gwNKOXZ6YcYwssgr9vOA-150">
+          <mxCell edge="1" parent="gwNKOXZ6YcYwssgr9vOA-121" source="gwNKOXZ6YcYwssgr9vOA-132" style="startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.29;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="gwNKOXZ6YcYwssgr9vOA-133">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="不存在重复房源" mermaidId="e:重复性检查中-&gt;核查通过#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.71;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="不存在重复房源" id="gwNKOXZ6YcYwssgr9vOA-151">
+          <mxCell edge="1" parent="gwNKOXZ6YcYwssgr9vOA-121" source="gwNKOXZ6YcYwssgr9vOA-132" style="startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.71;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="gwNKOXZ6YcYwssgr9vOA-134">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="生成重复数据提示" mermaidId="e:重复资料-&gt;核查结果已输出#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=1;entryY=0.1;" mermaidBaseValue="生成重复数据提示" id="gwNKOXZ6YcYwssgr9vOA-152">
+          <mxCell edge="1" parent="gwNKOXZ6YcYwssgr9vOA-121" source="gwNKOXZ6YcYwssgr9vOA-133" style="startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=1;entryY=0.1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="gwNKOXZ6YcYwssgr9vOA-135">
+            <mxGeometry relative="1" x="-0.6682" y="-25" as="geometry">
+              <mxPoint as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="生成核查通过结果" mermaidId="e:核查通过-&gt;核查结果已输出#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=1;entryY=0.3;" mermaidBaseValue="生成核查通过结果" id="gwNKOXZ6YcYwssgr9vOA-153">
+          <mxCell edge="1" parent="gwNKOXZ6YcYwssgr9vOA-121" source="gwNKOXZ6YcYwssgr9vOA-134" style="startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=1;entryY=0.3;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="gwNKOXZ6YcYwssgr9vOA-135">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:核查结果已输出-&gt;root_end#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="gwNKOXZ6YcYwssgr9vOA-154">
+          <mxCell edge="1" parent="gwNKOXZ6YcYwssgr9vOA-121" source="gwNKOXZ6YcYwssgr9vOA-135" style="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="gwNKOXZ6YcYwssgr9vOA-136">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidData="{&#xa;  &quot;data&quot;: &quot;stateDiagram-v2\n    [*] --&gt; 待选择\n\n    state \&quot;待选择\&quot; as 待选择\n    state \&quot;原始信息已读取\&quot; as 原始信息已读取\n    state \&quot;待录入或修改\&quot; as 待录入或修改\n    state \&quot;录入完成待检查\&quot; as 录入完成待检查\n    state \&quot;修改完成待检查\&quot; as 修改完成待检查\n    state \&quot;录入或修改后待检查\&quot; as 录入或修改后待检查\n    state \&quot;信息完整性检查中\&quot; as 信息完整性检查中\n    state \&quot;信息不完整\&quot; as 信息不完整\n    state \&quot;字段格式检查中\&quot; as 字段格式检查中\n    state \&quot;格式不规范\&quot; as 格式不规范\n    state \&quot;数值合理性检查中\&quot; as 数值合理性检查中\n    state \&quot;数值不合理\&quot; as 数值不合理\n    state \&quot;待确认更新\&quot; as 待确认更新\n    state \&quot;已保存\&quot; as 已保存\n    state \&quot;更新记录已生成\&quot; as 更新记录已生成\n    state \&quot;更新成功\&quot; as 更新成功\n\n    待选择 --&gt; 原始信息已读取: 选择待更新的房源资料\n    原始信息已读取: do / 读取当前房源原始信息\n\n    原始信息已读取 --&gt; 待录入或修改: 进入资料编辑状态\n    待录入或修改: do / 录入缺失信息或修改已有信息\n\n    待录入或修改 --&gt; 录入完成待检查: 录入房源资料\n    待录入或修改 --&gt; 修改完成待检查: 修改房源资料\n\n    录入完成待检查 --&gt; 录入或修改后待检查: 提交录入内容\n    修改完成待检查 --&gt; 录入或修改后待检查: 提交修改内容\n\n    录入或修改后待检查 --&gt; 信息完整性检查中: 检查房源信息是否完整\n\n    信息完整性检查中: do / 检查必填信息是否缺失\n    信息完整性检查中 --&gt; 信息不完整: 房源信息不完整\n    信息完整性检查中 --&gt; 字段格式检查中: 房源信息完整\n\n    信息不完整: do / 提示房源信息不完整\n    信息不完整 --&gt; 待录入或修改: 返回录入或修改房源资料\n\n    字段格式检查中: do / 检查字段格式是否规范\n    字段格式检查中 --&gt; 格式不规范: 字段格式不规范\n    字段格式检查中 --&gt; 数值合理性检查中: 字段格式规范\n\n    格式不规范: do / 提示字段格式不规范\n    格式不规范 --&gt; 待录入或修改: 返回录入或修改房源资料\n\n    数值合理性检查中: do / 检查价格、面积、楼层等数值是否合理\n    数值合理性检查中 --&gt; 数值不合理: 数值不合理\n    数值合理性检查中 --&gt; 待确认更新: 数值合理\n\n    数值不合理: do / 提示价格、面积或楼层等数值不合理\n    数值不合理 --&gt; 待录入或修改: 返回录入或修改房源资料\n\n    待确认更新: do / 等待确认更新房源信息\n    待确认更新 --&gt; 已保存: 确认更新房源信息\n\n    已保存: do / 保存更新后的房源资料\n    已保存 --&gt; 更新记录已生成: 记录更新时间和维护人员信息\n\n    更新记录已生成: do / 生成房源资料更新记录\n    更新记录已生成 --&gt; 更新成功: 提示房源信息更新成功\n\n    更新成功 --&gt; [*]&quot;,&#xa;  &quot;config&quot;: null&#xa;}" id="gwNKOXZ6YcYwssgr9vOA-155">
+          <mxCell connectable="0" parent="1" style="group;transparentBounds=1;editIcon=1;lockedGroup=0;groupPadding=20;" vertex="1">
+            <mxGeometry as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="n:root_start" mermaidBaseStyle="ellipse;html=1;fillColor=light-dark(#333333,#cccccc);strokeColor=light-dark(#333333,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="" id="gwNKOXZ6YcYwssgr9vOA-156">
+          <mxCell parent="gwNKOXZ6YcYwssgr9vOA-155" style="ellipse;html=1;fillColor=light-dark(#333333,#cccccc);strokeColor=light-dark(#333333,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="14" width="14" x="494" y="9934" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="待选择" mermaidId="n:待选择" mermaidBaseStyle="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="待选择" id="gwNKOXZ6YcYwssgr9vOA-157">
+          <mxCell parent="gwNKOXZ6YcYwssgr9vOA-155" style="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="40" width="64" x="469" y="9998" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="do / 读取当前房源原始信息" mermaidId="n:原始信息已读取" mermaidBaseStyle="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="do / 读取当前房源原始信息" id="gwNKOXZ6YcYwssgr9vOA-158">
+          <mxCell parent="gwNKOXZ6YcYwssgr9vOA-155" style="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="40" width="212" x="395" y="10107" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="do / 录入缺失信息或修改已有信息" mermaidId="n:待录入或修改" mermaidBaseStyle="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="do / 录入缺失信息或修改已有信息" id="gwNKOXZ6YcYwssgr9vOA-159">
+          <mxCell parent="gwNKOXZ6YcYwssgr9vOA-155" style="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="40" width="260" x="371" y="10216" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="录入完成待检查" mermaidId="n:录入完成待检查" mermaidBaseStyle="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="录入完成待检查" id="gwNKOXZ6YcYwssgr9vOA-160">
+          <mxCell parent="gwNKOXZ6YcYwssgr9vOA-155" style="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="40" width="128" x="82" y="10325" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="修改完成待检查" mermaidId="n:修改完成待检查" mermaidBaseStyle="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="修改完成待检查" id="gwNKOXZ6YcYwssgr9vOA-161">
+          <mxCell parent="gwNKOXZ6YcYwssgr9vOA-155" style="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="40" width="128" x="543" y="10325" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="录入或修改后待检查" mermaidId="n:录入或修改后待检查" mermaidBaseStyle="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="录入或修改后待检查" id="gwNKOXZ6YcYwssgr9vOA-162">
+          <mxCell parent="gwNKOXZ6YcYwssgr9vOA-155" style="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="40" width="160" x="66" y="10434" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="do / 检查必填信息是否缺失" mermaidId="n:信息完整性检查中" mermaidBaseStyle="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="do / 检查必填信息是否缺失" id="gwNKOXZ6YcYwssgr9vOA-163">
+          <mxCell parent="gwNKOXZ6YcYwssgr9vOA-155" style="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="40" width="212" x="40" y="10543" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="do / 提示房源信息不完整" mermaidId="n:信息不完整" mermaidBaseStyle="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="do / 提示房源信息不完整" id="gwNKOXZ6YcYwssgr9vOA-164">
+          <mxCell parent="gwNKOXZ6YcYwssgr9vOA-155" style="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="40" width="196" x="48" y="10652" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="do / 检查字段格式是否规范" mermaidId="n:字段格式检查中" mermaidBaseStyle="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="do / 检查字段格式是否规范" id="gwNKOXZ6YcYwssgr9vOA-165">
+          <mxCell parent="gwNKOXZ6YcYwssgr9vOA-155" style="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="40" width="212" x="294" y="10652" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="do / 提示字段格式不规范" mermaidId="n:格式不规范" mermaidBaseStyle="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="do / 提示字段格式不规范" id="gwNKOXZ6YcYwssgr9vOA-166">
+          <mxCell parent="gwNKOXZ6YcYwssgr9vOA-155" style="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="40" width="196" x="175" y="10761" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="do / 检查价格、面积、楼层等数值是否合理" mermaidId="n:数值合理性检查中" mermaidBaseStyle="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="do / 检查价格、面积、楼层等数值是否合理" id="gwNKOXZ6YcYwssgr9vOA-167">
+          <mxCell parent="gwNKOXZ6YcYwssgr9vOA-155" style="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="40" width="324" x="421" y="10761" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="do / 提示价格、面积或楼层等数值不合理" mermaidId="n:数值不合理" mermaidBaseStyle="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="do / 提示价格、面积或楼层等数值不合理" id="gwNKOXZ6YcYwssgr9vOA-168">
+          <mxCell parent="gwNKOXZ6YcYwssgr9vOA-155" style="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="40" width="308" x="484" y="10870" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="do / 等待确认更新房源信息" mermaidId="n:待确认更新" mermaidBaseStyle="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="do / 等待确认更新房源信息" id="gwNKOXZ6YcYwssgr9vOA-169">
+          <mxCell parent="gwNKOXZ6YcYwssgr9vOA-155" style="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="40" width="212" x="842" y="10870" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="do / 保存更新后的房源资料" mermaidId="n:已保存" mermaidBaseStyle="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="do / 保存更新后的房源资料" id="gwNKOXZ6YcYwssgr9vOA-170">
+          <mxCell parent="gwNKOXZ6YcYwssgr9vOA-155" style="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="40" width="212" x="842" y="10979" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="do / 生成房源资料更新记录" mermaidId="n:更新记录已生成" mermaidBaseStyle="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="do / 生成房源资料更新记录" id="gwNKOXZ6YcYwssgr9vOA-171">
+          <mxCell parent="gwNKOXZ6YcYwssgr9vOA-155" style="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="40" width="212" x="842" y="11088" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="更新成功" mermaidId="n:更新成功" mermaidBaseStyle="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="更新成功" id="gwNKOXZ6YcYwssgr9vOA-172">
+          <mxCell parent="gwNKOXZ6YcYwssgr9vOA-155" style="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="40" width="80" x="908" y="11197" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="n:root_end" mermaidBaseStyle="ellipse;html=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#333333,#cccccc);strokeWidth=2;centerRadius=4;centerColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="" id="gwNKOXZ6YcYwssgr9vOA-173">
+          <mxCell parent="gwNKOXZ6YcYwssgr9vOA-155" style="ellipse;html=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#333333,#cccccc);strokeWidth=2;centerRadius=4;centerColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="14" width="14" x="941" y="11287" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:root_start-&gt;待选择#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="gwNKOXZ6YcYwssgr9vOA-174">
+          <mxCell edge="1" parent="gwNKOXZ6YcYwssgr9vOA-155" source="gwNKOXZ6YcYwssgr9vOA-156" style="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="gwNKOXZ6YcYwssgr9vOA-157">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="选择待更新的房源资料" mermaidId="e:待选择-&gt;原始信息已读取#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="选择待更新的房源资料" id="gwNKOXZ6YcYwssgr9vOA-175">
+          <mxCell edge="1" parent="gwNKOXZ6YcYwssgr9vOA-155" source="gwNKOXZ6YcYwssgr9vOA-157" style="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="gwNKOXZ6YcYwssgr9vOA-158">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="进入资料编辑状态" mermaidId="e:原始信息已读取-&gt;待录入或修改#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="进入资料编辑状态" id="gwNKOXZ6YcYwssgr9vOA-176">
+          <mxCell edge="1" parent="gwNKOXZ6YcYwssgr9vOA-155" source="gwNKOXZ6YcYwssgr9vOA-158" style="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="gwNKOXZ6YcYwssgr9vOA-159">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="录入房源资料" mermaidId="e:待录入或修改-&gt;录入完成待检查#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="录入房源资料" id="gwNKOXZ6YcYwssgr9vOA-177">
+          <mxCell edge="1" parent="gwNKOXZ6YcYwssgr9vOA-155" source="gwNKOXZ6YcYwssgr9vOA-159" style="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="gwNKOXZ6YcYwssgr9vOA-160">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="146" y="10291" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="修改房源资料" mermaidId="e:待录入或修改-&gt;修改完成待检查#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.65;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="修改房源资料" id="gwNKOXZ6YcYwssgr9vOA-178">
+          <mxCell edge="1" parent="gwNKOXZ6YcYwssgr9vOA-155" source="gwNKOXZ6YcYwssgr9vOA-159" style="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.65;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="gwNKOXZ6YcYwssgr9vOA-161">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="607" y="10291" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="提交录入内容" mermaidId="e:录入完成待检查-&gt;录入或修改后待检查#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="提交录入内容" id="gwNKOXZ6YcYwssgr9vOA-179">
+          <mxCell edge="1" parent="gwNKOXZ6YcYwssgr9vOA-155" source="gwNKOXZ6YcYwssgr9vOA-160" style="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="gwNKOXZ6YcYwssgr9vOA-162">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="提交修改内容" mermaidId="e:修改完成待检查-&gt;录入或修改后待检查#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=1;entryY=0.28;" mermaidBaseValue="提交修改内容" id="gwNKOXZ6YcYwssgr9vOA-180">
+          <mxCell edge="1" parent="gwNKOXZ6YcYwssgr9vOA-155" source="gwNKOXZ6YcYwssgr9vOA-161" style="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=1;entryY=0.28;rounded=0;" target="gwNKOXZ6YcYwssgr9vOA-162">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="607" y="10400" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="检查房源信息是否完整" mermaidId="e:录入或修改后待检查-&gt;信息完整性检查中#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="检查房源信息是否完整" id="gwNKOXZ6YcYwssgr9vOA-181">
+          <mxCell edge="1" parent="gwNKOXZ6YcYwssgr9vOA-155" source="gwNKOXZ6YcYwssgr9vOA-162" style="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="gwNKOXZ6YcYwssgr9vOA-163">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="房源信息不完整" mermaidId="e:信息完整性检查中-&gt;信息不完整#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="房源信息不完整" id="gwNKOXZ6YcYwssgr9vOA-182">
+          <mxCell edge="1" parent="gwNKOXZ6YcYwssgr9vOA-155" source="gwNKOXZ6YcYwssgr9vOA-163" style="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="gwNKOXZ6YcYwssgr9vOA-164">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="房源信息完整" mermaidId="e:信息完整性检查中-&gt;字段格式检查中#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.94;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="房源信息完整" id="gwNKOXZ6YcYwssgr9vOA-183">
+          <mxCell edge="1" parent="gwNKOXZ6YcYwssgr9vOA-155" source="gwNKOXZ6YcYwssgr9vOA-163" style="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.94;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="gwNKOXZ6YcYwssgr9vOA-165">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="400" y="10618" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="返回录入或修改房源资料" mermaidId="e:信息不完整-&gt;待录入或修改#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=1;exitY=0.28;entryX=0.86;entryY=1;" mermaidBaseValue="返回录入或修改房源资料" id="gwNKOXZ6YcYwssgr9vOA-184">
+          <mxCell edge="1" parent="gwNKOXZ6YcYwssgr9vOA-155" source="gwNKOXZ6YcYwssgr9vOA-164" style="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=1;exitY=0.28;entryX=0.86;entryY=1;rounded=0;" target="gwNKOXZ6YcYwssgr9vOA-159">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="758" y="10618" />
+                <mxPoint x="758" y="10563" />
+                <mxPoint x="758" y="10509" />
+                <mxPoint x="758" y="10454" />
+                <mxPoint x="758" y="10400" />
+                <mxPoint x="758" y="10345" />
+                <mxPoint x="758" y="10291" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="字段格式不规范" mermaidId="e:字段格式检查中-&gt;格式不规范#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.28;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="字段格式不规范" id="gwNKOXZ6YcYwssgr9vOA-185">
+          <mxCell edge="1" parent="gwNKOXZ6YcYwssgr9vOA-155" source="gwNKOXZ6YcYwssgr9vOA-165" style="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.28;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="gwNKOXZ6YcYwssgr9vOA-166">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="273" y="10727" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="字段格式规范" mermaidId="e:字段格式检查中-&gt;数值合理性检查中#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.82;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="字段格式规范" id="gwNKOXZ6YcYwssgr9vOA-186">
+          <mxCell edge="1" parent="gwNKOXZ6YcYwssgr9vOA-155" source="gwNKOXZ6YcYwssgr9vOA-165" style="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.82;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="gwNKOXZ6YcYwssgr9vOA-167">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="583" y="10727" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="返回录入或修改房源资料" mermaidId="e:格式不规范-&gt;待录入或修改#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=1;exitY=0.28;entryX=1;entryY=0.98;" mermaidBaseValue="返回录入或修改房源资料" id="gwNKOXZ6YcYwssgr9vOA-187">
+          <mxCell edge="1" parent="gwNKOXZ6YcYwssgr9vOA-155" source="gwNKOXZ6YcYwssgr9vOA-166" style="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=1;exitY=0.28;entryX=1;entryY=0.98;rounded=0;" target="gwNKOXZ6YcYwssgr9vOA-159">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="866" y="10727" />
+                <mxPoint x="866" y="10672" />
+                <mxPoint x="866" y="10618" />
+                <mxPoint x="866" y="10563" />
+                <mxPoint x="866" y="10509" />
+                <mxPoint x="866" y="10454" />
+                <mxPoint x="866" y="10400" />
+                <mxPoint x="866" y="10345" />
+                <mxPoint x="866" y="10291" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="数值不合理" mermaidId="e:数值合理性检查中-&gt;数值不合理#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.4;exitY=1;entryX=0.32;entryY=0;" mermaidBaseValue="数值不合理" id="gwNKOXZ6YcYwssgr9vOA-188">
+          <mxCell edge="1" parent="gwNKOXZ6YcYwssgr9vOA-155" source="gwNKOXZ6YcYwssgr9vOA-167" style="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.4;exitY=1;entryX=0.32;entryY=0;rounded=0;" target="gwNKOXZ6YcYwssgr9vOA-168">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="584" y="10801" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="数值合理" mermaidId="e:数值合理性检查中-&gt;待确认更新#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.68;exitY=1;entryX=0.14;entryY=0;" mermaidBaseValue="数值合理" id="gwNKOXZ6YcYwssgr9vOA-189">
+          <mxCell edge="1" parent="gwNKOXZ6YcYwssgr9vOA-155" source="gwNKOXZ6YcYwssgr9vOA-167" style="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.68;exitY=1;entryX=0.14;entryY=0;rounded=0;" target="gwNKOXZ6YcYwssgr9vOA-169">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="738" y="10836" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="返回录入或修改房源资料" mermaidId="e:数值不合理-&gt;待录入或修改#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.9;exitY=0;entryX=1;entryY=0.88;" mermaidBaseValue="返回录入或修改房源资料" id="gwNKOXZ6YcYwssgr9vOA-190">
+          <mxCell edge="1" parent="gwNKOXZ6YcYwssgr9vOA-155" source="gwNKOXZ6YcYwssgr9vOA-168" style="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.9;exitY=0;entryX=1;entryY=0.88;rounded=0;" target="gwNKOXZ6YcYwssgr9vOA-159">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="974" y="10836" />
+                <mxPoint x="974" y="10781" />
+                <mxPoint x="974" y="10727" />
+                <mxPoint x="974" y="10672" />
+                <mxPoint x="974" y="10618" />
+                <mxPoint x="974" y="10563" />
+                <mxPoint x="974" y="10509" />
+                <mxPoint x="974" y="10454" />
+                <mxPoint x="974" y="10400" />
+                <mxPoint x="974" y="10345" />
+                <mxPoint x="974" y="10291" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="确认更新房源信息" mermaidId="e:待确认更新-&gt;已保存#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="确认更新房源信息" id="gwNKOXZ6YcYwssgr9vOA-191">
+          <mxCell edge="1" parent="gwNKOXZ6YcYwssgr9vOA-155" source="gwNKOXZ6YcYwssgr9vOA-169" style="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="gwNKOXZ6YcYwssgr9vOA-170">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="记录更新时间和维护人员信息" mermaidId="e:已保存-&gt;更新记录已生成#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="记录更新时间和维护人员信息" id="gwNKOXZ6YcYwssgr9vOA-192">
+          <mxCell edge="1" parent="gwNKOXZ6YcYwssgr9vOA-155" source="gwNKOXZ6YcYwssgr9vOA-170" style="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="gwNKOXZ6YcYwssgr9vOA-171">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="提示房源信息更新成功" mermaidId="e:更新记录已生成-&gt;更新成功#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="提示房源信息更新成功" id="gwNKOXZ6YcYwssgr9vOA-193">
+          <mxCell edge="1" parent="gwNKOXZ6YcYwssgr9vOA-155" source="gwNKOXZ6YcYwssgr9vOA-171" style="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="gwNKOXZ6YcYwssgr9vOA-172">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:更新成功-&gt;root_end#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="gwNKOXZ6YcYwssgr9vOA-194">
+          <mxCell edge="1" parent="gwNKOXZ6YcYwssgr9vOA-155" source="gwNKOXZ6YcYwssgr9vOA-172" style="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="gwNKOXZ6YcYwssgr9vOA-173">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
       </root>
     </mxGraphModel>
   </diagram>
