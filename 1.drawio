@@ -4879,10 +4879,200 @@
     </mxGraphModel>
   </diagram>
   <diagram id="sJ_v5Y9oJIQwXJ7XQYUo" name="第 4 页">
-    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1598" dy="1022" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <UserObject label="" mermaidData="{&#xa;  &quot;data&quot;: &quot;%%{init: {\&quot;theme\&quot;:\&quot;base\&quot;,\&quot;themeVariables\&quot;:{\&quot;background\&quot;:\&quot;#ffffff\&quot;,\&quot;primaryColor\&quot;:\&quot;#ffffff\&quot;,\&quot;primaryTextColor\&quot;:\&quot;#000000\&quot;,\&quot;primaryBorderColor\&quot;:\&quot;#000000\&quot;,\&quot;lineColor\&quot;:\&quot;#000000\&quot;,\&quot;fontFamily\&quot;:\&quot;Microsoft YaHei\&quot;}}}%%\nflowchart TB\n\n    EXT[\&quot;外部房源信息来源\&quot;]\n    CLEAN[\&quot;数据采集与清洗\&quot;]\n\n    L1[\&quot;1. 页面展示层&lt;br/&gt;&lt;br/&gt;普通用户端：概况展示、房源查询、房源详情、位置配套、房价预测&lt;br/&gt;数据维护端：资料维护、质量检查、异常资料处理&lt;br/&gt;系统管理端：状态查看、用户权限、基础配置、异常处理&lt;br/&gt;&lt;br/&gt;负责页面展示、用户输入与结果反馈\&quot;]\n\n    L2[\&quot;2. 服务接口层&lt;br/&gt;&lt;br/&gt;查询接口、详情接口、地图配套接口、预测接口、维护接口、系统管理接口&lt;br/&gt;&lt;br/&gt;基于 Django 路由 / 视图，负责接收请求并返回结构化数据\&quot;]\n\n    L3[\&quot;3. 业务处理层&lt;br/&gt;&lt;br/&gt;查询处理、详情处理、地图配套处理、房价预测处理&lt;br/&gt;资料维护处理、用户权限处理、基础配置处理、日志与异常处理&lt;br/&gt;&lt;br/&gt;Django 控制与服务逻辑 + Python 数据处理与机器学习预测\&quot;]\n\n    L4[\&quot;4. 数据支撑层&lt;br/&gt;&lt;br/&gt;标准房源数据、区域与配套信息、预测记录、维护记录&lt;br/&gt;用户与权限信息、基础配置数据、系统日志、预测模型&lt;br/&gt;&lt;br/&gt;负责数据存储、记录保存与模型支撑\&quot;]\n\n    MAP[\&quot;地图服务\&quot;]\n\n    EXT --&gt; CLEAN\n    CLEAN --&gt; L4\n\n    L1 &lt;--&gt;|页面请求 / 结果反馈| L2\n    L2 &lt;--&gt;|业务调用 / 结果返回| L3\n    L3 &lt;--&gt;|数据访问、模型调用 / 结果返回| L4\n\n    L3 &lt;--&gt;|地图位置与周边配套请求 / 返回| MAP\n\n    classDef default fill:#ffffff,stroke:#000000,color:#000000,stroke-width:1.2px;\n    classDef external fill:#ffffff,stroke:#000000,color:#000000,stroke-width:1.2px;\n\n    class L1,L2,L3,L4,EXT,CLEAN,MAP default;&quot;,&#xa;  &quot;config&quot;: null&#xa;}" id="Tu3zdjrg4u6U8YNrI88j-1">
+          <mxCell connectable="0" parent="1" style="group;transparentBounds=1;editIcon=1;lockedGroup=1;groupPadding=20;" vertex="1">
+            <mxGeometry height="820" width="870" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="外部房源信息来源" mermaidId="n:EXT" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1.2;fillColor=default;strokeColor=default;fontColor=default;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="外部房源信息来源" id="Tu3zdjrg4u6U8YNrI88j-2">
+          <mxCell parent="Tu3zdjrg4u6U8YNrI88j-1" style="html=1;whiteSpace=wrap;strokeWidth=1.2;fillColor=default;strokeColor=default;fontColor=default;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="54" width="188" x="102" y="470" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="数据采集与清洗" mermaidId="n:CLEAN" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1.2;fillColor=default;strokeColor=default;fontColor=default;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="数据采集与清洗" id="Tu3zdjrg4u6U8YNrI88j-3">
+          <mxCell parent="Tu3zdjrg4u6U8YNrI88j-1" style="html=1;whiteSpace=wrap;strokeWidth=1.2;fillColor=default;strokeColor=default;fontColor=default;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="54" width="172" x="110" y="630" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="1. 页面展示层&#xa;&#xa;普通用户端：概况展示、房源查询、房源详情、位置配套、房价预测&#xa;数据维护端：资料维护、质量检查、异常资料处理&#xa;系统管理端：状态查看、用户权限、基础配置、异常处理&#xa;&#xa;负责页面展示、用户输入与结果反馈" mermaidId="n:L1" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1.2;fillColor=default;strokeColor=default;fontColor=default;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="1. 页面展示层&#xa;&#xa;普通用户端：概况展示、房源查询、房源详情、位置配套、房价预测&#xa;数据维护端：资料维护、质量检查、异常资料处理&#xa;系统管理端：状态查看、用户权限、基础配置、异常处理&#xa;&#xa;负责页面展示、用户输入与结果反馈" id="Tu3zdjrg4u6U8YNrI88j-4">
+          <mxCell parent="Tu3zdjrg4u6U8YNrI88j-1" style="html=1;whiteSpace=wrap;strokeWidth=1.2;fillColor=default;strokeColor=default;fontColor=default;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="169" width="540" x="378" y="40" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="2. 服务接口层&#xa;&#xa;查询接口、详情接口、地图配套接口、预测接口、维护接口、系统管理接口&#xa;&#xa;基于 Django 路由 / 视图，负责接收请求并返回结构化数据" mermaidId="n:L2" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1.2;fillColor=default;strokeColor=default;fontColor=default;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="2. 服务接口层&#xa;&#xa;查询接口、详情接口、地图配套接口、预测接口、维护接口、系统管理接口&#xa;&#xa;基于 Django 路由 / 视图，负责接收请求并返回结构化数据" id="Tu3zdjrg4u6U8YNrI88j-5">
+          <mxCell parent="Tu3zdjrg4u6U8YNrI88j-1" style="html=1;whiteSpace=wrap;strokeWidth=1.2;fillColor=default;strokeColor=default;fontColor=default;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="131" width="588" x="354" y="290" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="3. 业务处理层&#xa;&#xa;查询处理、详情处理、地图配套处理、房价预测处理&#xa;资料维护处理、用户权限处理、基础配置处理、日志与异常处理&#xa;&#xa;Django 控制与服务逻辑 + Python 数据处理与机器学习预测" mermaidId="n:L3" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1.2;fillColor=default;strokeColor=default;fontColor=default;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="3. 业务处理层&#xa;&#xa;查询处理、详情处理、地图配套处理、房价预测处理&#xa;资料维护处理、用户权限处理、基础配置处理、日志与异常处理&#xa;&#xa;Django 控制与服务逻辑 + Python 数据处理与机器学习预测" id="Tu3zdjrg4u6U8YNrI88j-6">
+          <mxCell parent="Tu3zdjrg4u6U8YNrI88j-1" style="html=1;whiteSpace=wrap;strokeWidth=1.2;fillColor=default;strokeColor=default;fontColor=default;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="150" width="508" x="394" y="500" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="4. 数据支撑层&#xa;&#xa;标准房源数据、区域与配套信息、预测记录、维护记录&#xa;用户与权限信息、基础配置数据、系统日志、预测模型&#xa;&#xa;负责数据存储、记录保存与模型支撑" mermaidId="n:L4" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1.2;fillColor=default;strokeColor=default;fontColor=default;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="4. 数据支撑层&#xa;&#xa;标准房源数据、区域与配套信息、预测记录、维护记录&#xa;用户与权限信息、基础配置数据、系统日志、预测模型&#xa;&#xa;负责数据存储、记录保存与模型支撑" id="Tu3zdjrg4u6U8YNrI88j-7">
+          <mxCell parent="Tu3zdjrg4u6U8YNrI88j-1" style="html=1;whiteSpace=wrap;strokeWidth=1.2;fillColor=default;strokeColor=default;fontColor=default;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="150" width="444" x="426" y="750" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="地图服务" mermaidId="n:MAP" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1.2;fillColor=default;strokeColor=default;fontColor=default;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="地图服务" id="Tu3zdjrg4u6U8YNrI88j-8">
+          <mxCell parent="Tu3zdjrg4u6U8YNrI88j-1" style="html=1;whiteSpace=wrap;strokeWidth=1.2;fillColor=default;strokeColor=default;fontColor=default;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="55" width="141" x="1210" y="547.5" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:EXT-&gt;CLEAN#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=#000000;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="Tu3zdjrg4u6U8YNrI88j-9">
+          <mxCell edge="1" parent="Tu3zdjrg4u6U8YNrI88j-1" source="Tu3zdjrg4u6U8YNrI88j-2" style="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=#000000;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="Tu3zdjrg4u6U8YNrI88j-3">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:CLEAN-&gt;L4#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=#000000;exitX=0.5;exitY=1;entryX=0.4;entryY=0;" mermaidBaseValue="" id="Tu3zdjrg4u6U8YNrI88j-10">
+          <mxCell edge="1" parent="Tu3zdjrg4u6U8YNrI88j-1" source="Tu3zdjrg4u6U8YNrI88j-3" style="startArrow=none;endArrow=block;endSize=7;strokeColor=#000000;exitX=0.5;exitY=1;entryX=0.4;entryY=0;rounded=0;exitDx=0;exitDy=0;">
+            <mxGeometry relative="1" as="geometry">
+              <mxPoint x="18.400000000000006" y="760" as="sourcePoint" />
+              <mxPoint x="425.9999999999999" y="826" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="页面请求 / 结果反馈" mermaidId="e:L1-&gt;L2#0" mermaidBaseStyle="curved=1;startArrow=block;startSize=7;endArrow=block;endSize=7;strokeColor=#000000;html=1;fontSize=16;labelBackgroundColor=light-dark(#E8E8E88D,#2a2a2a8D);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#000000;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="页面请求 / 结果反馈" id="Tu3zdjrg4u6U8YNrI88j-11">
+          <mxCell edge="1" parent="Tu3zdjrg4u6U8YNrI88j-1" source="Tu3zdjrg4u6U8YNrI88j-4" style="curved=1;startArrow=block;startSize=7;endArrow=block;endSize=7;strokeColor=#000000;html=1;fontSize=16;labelBackgroundColor=light-dark(#E8E8E88D,#2a2a2a8D);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#000000;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="Tu3zdjrg4u6U8YNrI88j-5">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="业务调用 / 结果返回" mermaidId="e:L2-&gt;L3#0" mermaidBaseStyle="curved=1;startArrow=block;startSize=7;endArrow=block;endSize=7;strokeColor=#000000;html=1;fontSize=16;labelBackgroundColor=light-dark(#E8E8E88D,#2a2a2a8D);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#000000;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="业务调用 / 结果返回" id="Tu3zdjrg4u6U8YNrI88j-12">
+          <mxCell edge="1" parent="Tu3zdjrg4u6U8YNrI88j-1" source="Tu3zdjrg4u6U8YNrI88j-5" style="curved=1;startArrow=block;startSize=7;endArrow=block;endSize=7;strokeColor=#000000;html=1;fontSize=16;labelBackgroundColor=light-dark(#E8E8E88D,#2a2a2a8D);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#000000;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="Tu3zdjrg4u6U8YNrI88j-6">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="数据访问、模型调用 / 结果返回" mermaidId="e:L3-&gt;L4#0" mermaidBaseStyle="curved=1;startArrow=block;startSize=7;endArrow=block;endSize=7;strokeColor=#000000;html=1;fontSize=16;labelBackgroundColor=light-dark(#E8E8E88D,#2a2a2a8D);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#000000;exitX=0.28;exitY=1;entryX=0.84;entryY=0;" mermaidBaseValue="数据访问、模型调用 / 结果返回" id="Tu3zdjrg4u6U8YNrI88j-13">
+          <mxCell edge="1" parent="Tu3zdjrg4u6U8YNrI88j-1" source="Tu3zdjrg4u6U8YNrI88j-6" style="startArrow=block;startSize=7;endArrow=block;endSize=7;strokeColor=#000000;html=1;fontSize=16;labelBackgroundColor=light-dark(#E8E8E88D,#2a2a2a8D);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#000000;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;exitDx=0;exitDy=0;entryDx=0;entryDy=0;" target="Tu3zdjrg4u6U8YNrI88j-7">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="地图位置与周边配套请求 / 返回" mermaidId="e:L3-&gt;MAP#0" mermaidBaseStyle="curved=1;startArrow=block;startSize=7;endArrow=block;endSize=7;strokeColor=#000000;html=1;fontSize=16;labelBackgroundColor=light-dark(#E8E8E88D,#2a2a2a8D);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#000000;exitX=0.67;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="地图位置与周边配套请求 / 返回" id="Tu3zdjrg4u6U8YNrI88j-14">
+          <mxCell edge="1" parent="Tu3zdjrg4u6U8YNrI88j-1" source="Tu3zdjrg4u6U8YNrI88j-6" style="startArrow=block;startSize=7;endArrow=block;endSize=7;strokeColor=#000000;html=1;fontSize=16;labelBackgroundColor=light-dark(#E8E8E88D,#2a2a2a8D);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=#000000;exitX=1;exitY=0.5;entryX=0;entryY=0.5;rounded=0;entryDx=0;entryDy=0;exitDx=0;exitDy=0;" target="Tu3zdjrg4u6U8YNrI88j-8">
+            <mxGeometry relative="1" as="geometry">
+              <mxPoint x="902.0000000000001" y="538" as="sourcePoint" />
+              <mxPoint x="1338.1399999999999" y="430" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidData="{&#xa;  &quot;data&quot;: &quot;graph LR\n\n    EXT[\&quot;外部房源信息来源&lt;br/&gt;&lt;br/&gt;数据采集与清洗\&quot;]\n\n    L1[\&quot;1. 页面展示层&lt;br/&gt;&lt;br/&gt;\n普通用户端：&lt;br/&gt;\n概况展示&lt;br/&gt;\n房源查询&lt;br/&gt;\n房源详情&lt;br/&gt;\n位置配套&lt;br/&gt;\n房价预测&lt;br/&gt;&lt;br/&gt;\n数据维护端：&lt;br/&gt;\n资料维护&lt;br/&gt;\n质量检查&lt;br/&gt;\n异常资料处理&lt;br/&gt;&lt;br/&gt;\n系统管理端：&lt;br/&gt;\n状态查看&lt;br/&gt;\n用户权限&lt;br/&gt;\n基础配置&lt;br/&gt;\n异常处理&lt;br/&gt;&lt;br/&gt;\n负责页面展示、用户输入与结果反馈\&quot;]\n\n    L2[\&quot;2. 服务接口层&lt;br/&gt;&lt;br/&gt;\n查询接口&lt;br/&gt;\n详情接口&lt;br/&gt;\n地图配套接口&lt;br/&gt;\n预测接口&lt;br/&gt;\n维护接口&lt;br/&gt;\n系统管理接口&lt;br/&gt;&lt;br/&gt;\n基于 Django 路由 / 视图&lt;br/&gt;\n负责接收请求并返回结构化数据\&quot;]\n\n    L3[\&quot;3. 业务处理层&lt;br/&gt;&lt;br/&gt;\n查询处理&lt;br/&gt;\n详情处理&lt;br/&gt;\n地图配套处理&lt;br/&gt;\n房价预测处理&lt;br/&gt;\n资料维护处理&lt;br/&gt;\n用户权限处理&lt;br/&gt;\n基础配置处理&lt;br/&gt;\n日志与异常处理&lt;br/&gt;&lt;br/&gt;\nDjango 控制与服务逻辑&lt;br/&gt;\nPython 数据处理与机器学习预测\&quot;]\n\n    L4[\&quot;4. 数据支撑层&lt;br/&gt;&lt;br/&gt;\n标准房源数据&lt;br/&gt;\n区域与配套信息&lt;br/&gt;\n预测记录&lt;br/&gt;\n维护记录&lt;br/&gt;\n用户与权限信息&lt;br/&gt;\n基础配置数据&lt;br/&gt;\n系统日志&lt;br/&gt;\n预测模型&lt;br/&gt;&lt;br/&gt;\n负责数据存储、记录保存与模型支撑\&quot;]\n\n    MAP[\&quot;地图服务&lt;br/&gt;&lt;br/&gt;\n提供房源位置展示&lt;br/&gt;\n周边交通、学校、医院、商业等配套信息\&quot;]\n\n    EXT --&gt;|\&quot;采集、清洗后形成标准数据\&quot;| L4\n\n    L1 --&gt;|\&quot;页面请求\&quot;| L2\n    L2 --&gt;|\&quot;业务调用\&quot;| L3\n    L3 --&gt;|\&quot;数据访问 / 模型调用\&quot;| L4\n\n    L4 -.-&gt;|\&quot;结果返回\&quot;| L3\n    L3 -.-&gt;|\&quot;结果返回\&quot;| L2\n    L2 -.-&gt;|\&quot;结果反馈\&quot;| L1\n\n    L3 &lt;--&gt;|\&quot;地图位置与周边配套请求 / 返回\&quot;| MAP&quot;,&#xa;  &quot;config&quot;: null&#xa;}" id="Tu3zdjrg4u6U8YNrI88j-185">
+          <mxCell connectable="0" parent="1" style="group;transparentBounds=1;editIcon=1;lockedGroup=0;groupPadding=20;" vertex="1">
+            <mxGeometry height="2083" width="780" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="外部房源信息来源&#xa;&#xa;数据采集与清洗" mermaidId="n:EXT" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="外部房源信息来源&#xa;&#xa;数据采集与清洗" id="Tu3zdjrg4u6U8YNrI88j-186">
+          <mxCell parent="Tu3zdjrg4u6U8YNrI88j-185" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="103" width="210" x="550" y="1960" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="1. 页面展示层&#xa;&#xa;&#xa;普通用户端：&#xa;&#xa;概况展示&#xa;&#xa;房源查询&#xa;&#xa;房源详情&#xa;&#xa;位置配套&#xa;&#xa;房价预测&#xa;&#xa;&#xa;数据维护端：&#xa;&#xa;资料维护&#xa;&#xa;质量检查&#xa;&#xa;异常资料处理&#xa;&#xa;&#xa;系统管理端：&#xa;&#xa;状态查看&#xa;&#xa;用户权限&#xa;&#xa;基础配置&#xa;&#xa;异常处理&#xa;&#xa;&#xa;负责页面展示、用户输入与结果反馈" mermaidId="n:L1" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="1. 页面展示层&#xa;&#xa;&#xa;普通用户端：&#xa;&#xa;概况展示&#xa;&#xa;房源查询&#xa;&#xa;房源详情&#xa;&#xa;位置配套&#xa;&#xa;房价预测&#xa;&#xa;&#xa;数据维护端：&#xa;&#xa;资料维护&#xa;&#xa;质量检查&#xa;&#xa;异常资料处理&#xa;&#xa;&#xa;系统管理端：&#xa;&#xa;状态查看&#xa;&#xa;用户权限&#xa;&#xa;基础配置&#xa;&#xa;异常处理&#xa;&#xa;&#xa;负责页面展示、用户输入与结果反馈" id="Tu3zdjrg4u6U8YNrI88j-187">
+          <mxCell parent="Tu3zdjrg4u6U8YNrI88j-185" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="745" width="316" x="2040" y="1143" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="2. 服务接口层&#xa;&#xa;&#xa;查询接口&#xa;&#xa;详情接口&#xa;&#xa;地图配套接口&#xa;&#xa;预测接口&#xa;&#xa;维护接口&#xa;&#xa;系统管理接口&#xa;&#xa;&#xa;基于 Django 路由 / 视图&#xa;&#xa;负责接收请求并返回结构化数据" mermaidId="n:L2" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="2. 服务接口层&#xa;&#xa;&#xa;查询接口&#xa;&#xa;详情接口&#xa;&#xa;地图配套接口&#xa;&#xa;预测接口&#xa;&#xa;维护接口&#xa;&#xa;系统管理接口&#xa;&#xa;&#xa;基于 Django 路由 / 视图&#xa;&#xa;负责接收请求并返回结构化数据" id="Tu3zdjrg4u6U8YNrI88j-188">
+          <mxCell parent="Tu3zdjrg4u6U8YNrI88j-185" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="400" width="284" x="1560" y="1293" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;font style=&quot;font-size: 16px;&quot;&gt;3. 业务处理层&lt;br&gt;&lt;br&gt;&lt;br&gt;查询处理&lt;br&gt;&lt;br&gt;详情处理&lt;br&gt;&lt;br&gt;地图配套处理&lt;br&gt;&lt;br&gt;房价预测处理&lt;br&gt;&lt;br&gt;资料维护处理&lt;br&gt;&lt;br&gt;用户权限处理&lt;br&gt;&lt;br&gt;基础配置处理&lt;br&gt;&lt;br&gt;日志与异常处理&lt;br&gt;&lt;br&gt;&lt;br&gt;Django 控制与服务逻辑&lt;br&gt;&lt;br&gt;Python 数据处理与机器学习预测&lt;/font&gt;" mermaidId="n:L3" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="3. 业务处理层&#xa;&#xa;&#xa;查询处理&#xa;&#xa;详情处理&#xa;&#xa;地图配套处理&#xa;&#xa;房价预测处理&#xa;&#xa;资料维护处理&#xa;&#xa;用户权限处理&#xa;&#xa;基础配置处理&#xa;&#xa;日志与异常处理&#xa;&#xa;&#xa;Django 控制与服务逻辑&#xa;&#xa;Python 数据处理与机器学习预测" id="Tu3zdjrg4u6U8YNrI88j-189">
+          <mxCell parent="Tu3zdjrg4u6U8YNrI88j-185" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="477" width="290" x="1030" y="1277" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="4. 数据支撑层&#xa;&#xa;&#xa;标准房源数据&#xa;&#xa;区域与配套信息&#xa;&#xa;预测记录&#xa;&#xa;维护记录&#xa;&#xa;用户与权限信息&#xa;&#xa;基础配置数据&#xa;&#xa;系统日志&#xa;&#xa;预测模型&#xa;&#xa;&#xa;负责数据存储、记录保存与模型支撑" mermaidId="n:L4" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="4. 数据支撑层&#xa;&#xa;&#xa;标准房源数据&#xa;&#xa;区域与配套信息&#xa;&#xa;预测记录&#xa;&#xa;维护记录&#xa;&#xa;用户与权限信息&#xa;&#xa;基础配置数据&#xa;&#xa;系统日志&#xa;&#xa;预测模型&#xa;&#xa;&#xa;负责数据存储、记录保存与模型支撑" id="Tu3zdjrg4u6U8YNrI88j-190">
+          <mxCell parent="Tu3zdjrg4u6U8YNrI88j-185" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="438" width="316" x="480" y="1293" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="地图服务&#xa;&#xa;&#xa;提供房源位置展示&#xa;&#xa;周边交通、学校、医院、商业等配套信息" mermaidId="n:MAP" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="地图服务&#xa;&#xa;&#xa;提供房源位置展示&#xa;&#xa;周边交通、学校、医院、商业等配套信息" id="Tu3zdjrg4u6U8YNrI88j-191">
+          <mxCell parent="Tu3zdjrg4u6U8YNrI88j-185" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="150" width="348" x="1540" y="1840" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="采集、清洗后形成标准数据" mermaidId="e:EXT-&gt;L4#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=light-dark(#E8E8E88D,#2a2a2a8D);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=1;exitY=0.49;entryX=0;entryY=0.5;" mermaidBaseValue="采集、清洗后形成标准数据" id="Tu3zdjrg4u6U8YNrI88j-192">
+          <mxCell edge="1" parent="Tu3zdjrg4u6U8YNrI88j-185" source="Tu3zdjrg4u6U8YNrI88j-186" style="startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=light-dark(#E8E8E88D,#2a2a2a8D);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=0;entryX=0;entryY=0.5;rounded=0;exitDx=0;exitDy=0;">
+            <mxGeometry relative="1" as="geometry">
+              <mxPoint x="878" y="2234.57" as="sourcePoint" />
+              <mxPoint x="620" y="1731" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="页面请求" mermaidId="e:L1-&gt;L2#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=light-dark(#E8E8E88D,#2a2a2a8D);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0;exitY=0.5174496644295302;exitDx=0;exitDy=0;entryX=1;entryY=0.5325;entryDx=0;entryDy=0;curved=1;exitX=0;exitY=0.52;entryX=1;entryY=0.53;" mermaidBaseValue="页面请求" id="Tu3zdjrg4u6U8YNrI88j-193">
+          <mxCell edge="1" parent="Tu3zdjrg4u6U8YNrI88j-185" source="Tu3zdjrg4u6U8YNrI88j-187" style="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=light-dark(#E8E8E88D,#2a2a2a8D);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0;exitY=0.52;exitDx=0;exitDy=0;entryX=1;entryY=0.53;entryDx=0;entryDy=0;rounded=0;" target="Tu3zdjrg4u6U8YNrI88j-188">
+            <mxGeometry relative="1" as="geometry">
+              <mxPoint as="offset" />
+              <Array as="points">
+                <mxPoint x="1947" y="1538" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="业务调用" mermaidId="e:L2-&gt;L3#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=light-dark(#E8E8E88D,#2a2a2a8D);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0;exitY=0.5325;exitDx=0;exitDy=0;entryX=1;entryY=0.5272536687631028;entryDx=0;entryDy=0;curved=1;exitX=0;exitY=0.53;entryX=1;entryY=0.53;" mermaidBaseValue="业务调用" id="Tu3zdjrg4u6U8YNrI88j-194">
+          <mxCell edge="1" parent="Tu3zdjrg4u6U8YNrI88j-185" source="Tu3zdjrg4u6U8YNrI88j-188" style="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=light-dark(#E8E8E88D,#2a2a2a8D);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0;exitY=0.53;exitDx=0;exitDy=0;entryX=1;entryY=0.53;entryDx=0;entryDy=0;rounded=0;" target="Tu3zdjrg4u6U8YNrI88j-189">
+            <mxGeometry relative="1" as="geometry">
+              <mxPoint as="offset" />
+              <Array as="points">
+                <mxPoint x="1436" y="1548" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="数据访问 / 模型调用" mermaidId="e:L3-&gt;L4#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=light-dark(#E8E8E88D,#2a2a2a8D);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0;exitY=0.5272536687631028;exitDx=0;exitDy=0;entryX=1;entryY=0.5296803652968036;entryDx=0;entryDy=0;curved=1;exitX=0;exitY=0.53;entryX=1;entryY=0.53;" mermaidBaseValue="数据访问 / 模型调用" id="Tu3zdjrg4u6U8YNrI88j-195">
+          <mxCell edge="1" parent="Tu3zdjrg4u6U8YNrI88j-185" source="Tu3zdjrg4u6U8YNrI88j-189" style="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=light-dark(#E8E8E88D,#2a2a2a8D);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0;exitY=0.53;exitDx=0;exitDy=0;entryX=1;entryY=0.53;entryDx=0;entryDy=0;rounded=0;" target="Tu3zdjrg4u6U8YNrI88j-190">
+            <mxGeometry relative="1" as="geometry">
+              <mxPoint as="offset" />
+              <Array as="points">
+                <mxPoint x="894" y="1597" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="结果返回" mermaidId="e:L4-&gt;L3#0" mermaidBaseStyle="curved=1;dashed=1;dashPattern=2 3;fixDash=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=light-dark(#E8E8E88D,#2a2a2a8D);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=1;exitY=0.4703196347031964;exitDx=0;exitDy=0;entryX=0;entryY=0.4727463312368973;entryDx=0;entryDy=0;curved=1;exitX=1;exitY=0.47;entryX=0;entryY=0.47;" mermaidBaseValue="结果返回" id="Tu3zdjrg4u6U8YNrI88j-196">
+          <mxCell edge="1" parent="Tu3zdjrg4u6U8YNrI88j-185" source="Tu3zdjrg4u6U8YNrI88j-190" style="curved=1;dashed=1;dashPattern=2 3;fixDash=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=light-dark(#E8E8E88D,#2a2a2a8D);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=1;exitY=0.47;exitDx=0;exitDy=0;entryX=0;entryY=0.47;entryDx=0;entryDy=0;rounded=0;" target="Tu3zdjrg4u6U8YNrI88j-189">
+            <mxGeometry relative="1" as="geometry">
+              <mxPoint as="offset" />
+              <Array as="points">
+                <mxPoint x="894" y="1467" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="结果返回" mermaidId="e:L3-&gt;L2#0" mermaidBaseStyle="curved=1;dashed=1;dashPattern=2 3;fixDash=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=light-dark(#E8E8E88D,#2a2a2a8D);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=1;exitY=0.4727463312368973;exitDx=0;exitDy=0;entryX=0;entryY=0.4675;entryDx=0;entryDy=0;curved=1;exitX=1;exitY=0.47;entryX=0;entryY=0.47;" mermaidBaseValue="结果返回" id="Tu3zdjrg4u6U8YNrI88j-197">
+          <mxCell edge="1" parent="Tu3zdjrg4u6U8YNrI88j-185" source="Tu3zdjrg4u6U8YNrI88j-189" style="curved=1;dashed=1;dashPattern=2 3;fixDash=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=light-dark(#E8E8E88D,#2a2a2a8D);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=1;exitY=0.47;exitDx=0;exitDy=0;entryX=0;entryY=0.47;entryDx=0;entryDy=0;rounded=0;" target="Tu3zdjrg4u6U8YNrI88j-188">
+            <mxGeometry relative="1" as="geometry">
+              <mxPoint as="offset" />
+              <Array as="points">
+                <mxPoint x="1436" y="1458" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="结果反馈" mermaidId="e:L2-&gt;L1#0" mermaidBaseStyle="curved=1;dashed=1;dashPattern=2 3;fixDash=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=light-dark(#E8E8E88D,#2a2a2a8D);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=1;exitY=0.4675;exitDx=0;exitDy=0;entryX=0;entryY=0.4825503355704698;entryDx=0;entryDy=0;curved=1;exitX=1;exitY=0.47;entryX=0;entryY=0.48;" mermaidBaseValue="结果反馈" id="Tu3zdjrg4u6U8YNrI88j-198">
+          <mxCell edge="1" parent="Tu3zdjrg4u6U8YNrI88j-185" source="Tu3zdjrg4u6U8YNrI88j-188" style="curved=1;dashed=1;dashPattern=2 3;fixDash=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=light-dark(#E8E8E88D,#2a2a2a8D);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=1;exitY=0.47;exitDx=0;exitDy=0;entryX=0;entryY=0.48;entryDx=0;entryDy=0;rounded=0;" target="Tu3zdjrg4u6U8YNrI88j-187">
+            <mxGeometry relative="1" as="geometry">
+              <mxPoint as="offset" />
+              <Array as="points">
+                <mxPoint x="1947" y="1448" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="地图位置与周边配套请求 / 返回" mermaidId="e:L3-&gt;MAP#0" mermaidBaseStyle="curved=1;startArrow=block;startSize=7;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=light-dark(#E8E8E88D,#2a2a2a8D);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=1;exitY=0.83;entryX=0;entryY=0.5;" mermaidBaseValue="地图位置与周边配套请求 / 返回" id="Tu3zdjrg4u6U8YNrI88j-199">
+          <mxCell edge="1" parent="Tu3zdjrg4u6U8YNrI88j-185" source="Tu3zdjrg4u6U8YNrI88j-189" style="startArrow=block;startSize=7;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=light-dark(#E8E8E88D,#2a2a2a8D);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=1;exitY=0.83;entryX=0;entryY=0.5;rounded=0;" target="Tu3zdjrg4u6U8YNrI88j-191">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
       </root>
     </mxGraphModel>
   </diagram>
